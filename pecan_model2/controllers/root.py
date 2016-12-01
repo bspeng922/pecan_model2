@@ -13,7 +13,7 @@ class RootController(object):
         query = Session.query(User)
         users = query.all()
         names = [user.name for user in users]
-        return {"names": names}
+        return {"users": users}
 
     @expose('json')
     @index.when(method='POST')

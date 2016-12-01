@@ -12,3 +12,10 @@ class User(Base):
     name = Column(String(64), nullable=False)
     password = Column(String(64), nullable=False)
     email = Column(String(64))
+
+    def __json__(self):
+        return dict(
+            id=self.id,
+            name=self.name,
+            email=self.email
+        )
